@@ -7,3 +7,5 @@ ado_repository_name: "MigrateFromADORepo"
 
 ado_url: "https://dev.azure.com/ds4tech"  # e.g "ds4tech.visualstudio.com"
 
+github_org: "MigrateFromADO"
+target_github_repo_name: "migrated-repo"
