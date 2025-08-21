@@ -5,6 +5,9 @@
 
 set -e  # Exit on any error
 
+export GITHUB_REPOSITORY="ds4tech/migrate-ado-repository"
+export GH_PAT=$(gh auth token)
+
 # Initialize variables
 ADO_PAT=""
 
@@ -65,6 +68,10 @@ ORGANIZATION_URL=$(terraform output -raw organization_url)
 WORK_ITEM_ID=$(terraform output -raw update_readme_work_item_id)
 REPOSITORY_URL=$(terraform output -raw repository_url)
 
+echo $REPOSITORY_NAME
+echo $UPDATED_BRANCH
+echo $Work_ITEM_ID
+echo
 # Create the pull request and capture the PR ID
 PR_OUTPUT=$(az repos pr create \
   --source-branch "$UPDATED_BRANCH" \
